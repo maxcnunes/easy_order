@@ -5,12 +5,12 @@ FactoryGirl.define do
     picture_url "http" 
     price 0
     
-    trait :active do
-      active true
+    # status
+    trait :active do 
+      active true 
     end
-    
-    trait :inactive do
-      active false
+    trait :inactive do 
+      active false 
     end
   end
 end
