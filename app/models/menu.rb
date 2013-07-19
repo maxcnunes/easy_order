@@ -1,15 +1,15 @@
 class Menu
   class << self
-    def all_categories 
+    def all_categories
       Category.all
     end
-    
+
     def all_products
       Product.where(active: true)
     end
-    
+
     def all_products_by_category(category)
-      all_products().joins(:category).where(categories: { id: category.id })
+      Product.where(:category => category)
     end
   end
 end

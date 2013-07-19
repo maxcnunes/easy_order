@@ -1,4 +1,11 @@
-class Product < ActiveRecord::Base
+class Product
+  include Mongoid::Document
+
+  field :name, type: String
+  field :price, type: BigDecimal
+  field :active, type: Boolean
+  field :out_of_stock, type: Boolean
+  field :picture_url, type: String
+
   belongs_to :category
-  attr_accessible :active, :name, :out_of_stock, :picture_url, :price
 end

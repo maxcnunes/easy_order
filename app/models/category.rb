@@ -1,3 +1,5 @@
-class Category < ActiveRecord::Base
-  attr_accessible :name
+class Category
+  include Mongoid::Document
+
+  field :name, type: String
 end
