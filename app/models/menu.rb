@@ -9,7 +9,7 @@ class Menu
     end
 
     def all_products_by_category(category)
-      Product.where(:category => category)
+      Product.where(category: category)
     end
   end
 end
