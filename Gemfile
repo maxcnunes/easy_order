@@ -20,4 +20,5 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'capybara'
   gem 'guard-rspec'
+  gem 'coveralls', require: false
 end
