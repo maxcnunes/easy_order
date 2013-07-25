@@ -3,15 +3,15 @@ development:
   sessions:
     # Defines the default session. (required)
     default:
-      uri: <%= ENV['MONGODB_DEVELOPMENT_URI'] %>
+      #uri: <%= ENV['MONGODB_DEVELOPMENT_URI'] %>
       # Defines the name of the default database that Mongoid can connect to.
       # (required).
-      #database: easy_order_development
+      database: easy_order_development
       # Provides the hosts the default session can connect to. Must be an array
       # of host:port pairs. (required)
-      #hosts:
-      #  - localhost:27017
-      #options:
+      hosts:
+        - localhost:27017
+      options:
         # Change whether the session persists in safe mode by default.
         # (default: false)
         # safe: false
@@ -66,10 +66,10 @@ development:
 test:
   sessions:
     default:
-      uri: <%= ENV['MONGODB_TEST_URI'] %>
-      #database: easy_order_test
-      #hosts:
-      #  - localhost:27017
+      #uri: <%= ENV['MONGODB_TEST_URI'] %>
+      database: easy_order_test
+      hosts:
+        - localhost:27017
       options:
         consistency: :strong
         # In the test environment we lower the retries and retry interval to

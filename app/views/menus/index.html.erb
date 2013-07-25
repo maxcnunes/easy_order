@@ -1,6 +1,6 @@
 <h1>Menus#index</h1>
 <ul>
-	<% @categories.each do |category| %>
-	<li><%= category.name %></li>
-	<% end %>
+  <% @categories.each do |category| %>
+  <li><%= link_to category.name, products_by_category_menus_path(category_id: category.id) %></li>
+  <% end %>
 </ul>

@@ -10,9 +10,22 @@ describe MenusController do
     end
 
     it "load all categories" do
+      Menu.should_receive(:all_categories)
       get :index
-      FactoryGirl.create_list(:category, CATEGORIES_AMOUNT)
-      assigns(:categories).should_not be_nil
+    end
+  end
+
+  context "GET 'products_by_category'" do
+    it "load products by category" do
+      category = FactoryGirl.create(:category)
+      Menu.should_receive(:all_products_by_category).with(category)
+      get :products_by_category, category_id: category.id
+    end
+
+    it "respond with json" do
+      category = FactoryGirl.create(:category)
+      get :products_by_category, category_id: category.id
+      response.content_type.should == Mime::JSON
     end
   end
 

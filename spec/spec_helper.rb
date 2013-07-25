@@ -1,15 +1,12 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'coveralls'
+Coveralls.wear!
+
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'rspec/autorun'
-require 'coveralls'
-Coveralls.wear!
-
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
-
-ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
 
